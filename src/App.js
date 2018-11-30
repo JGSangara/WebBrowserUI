@@ -3,6 +3,7 @@ import NewTab from './components/Tabs/Tab'
 import SearchURLContainer from './components/SearchBar/SearchURL';
 import StartWindow from './components/StartScreen/Start'
 import DownloadsSection from './components/DownloadManager/Downloads'
+import BrowserSettings from './components/SettingsMenu/BrowserSettings'
 import { HashRouter as Router,Route, Link } from "react-router-dom";
 
 import './sass/main.css'
@@ -49,6 +50,9 @@ class App extends Component
 
                     <Route exact path="/Downloads" render={()=><div><BrowserContainer CurrentPage="/#/Downloads" CurrentModeRoute="/Downloads" mode={this.state.privateMode ? "private" : "normal"} BackgroundColor={this.state.privateMode ? "rgb(50, 54, 57)" : "white"}/>
                     <DownloadsSection/></div>} />
+
+                    <Route exact path="/Settings" render={()=><div><BrowserContainer CurrentPage="/#/Settings" CurrentModeRoute="/Settings" mode={this.state.privateMode ? "private" : "normal"} BackgroundColor={this.state.privateMode ? "rgb(50, 54, 57)" : "white"}/>
+                    <BrowserSettings/></div>} />
 
                     <Route exact path="/private" render={()=><div onLoad={this.handleMode}>
                     <BrowserContainer CurrentPage="/#/private" CurrentModeRoute="/private" mode={this.state.privateMode ? "private" : "normal"} BackgroundColor={this.state.privateMode ? "rgb(50, 54, 57)" : "white"}/>

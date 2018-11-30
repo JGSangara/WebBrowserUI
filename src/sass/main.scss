@@ -189,6 +189,8 @@
                   text-transform: capitalize;
                   margin-bottom: 0.85em;
                   color: white;
+                  position: relative;
+
                   a
                   {
                       text-decoration: none;
@@ -389,18 +391,238 @@
     }
 }
 
+/*DownloadLists*/
+
+.DownloadsList
+{
+    margin: 0 auto;
+    padding: 5%;
+    @include AlignCenter(column);
+    background: url('~images/london.png') no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    .DownloadBox
+    {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        margin-bottom: 2em;
+        justify-content: flex-start;
+        align-items: flex-start;
+        label
+        {
+            color:#5c5c5c;
+        }
+
+        .container
+        {
+            background: white;
+            margin-top:2%;
+            box-shadow: 0 10px 10px -10px grey;
+            width: 100%;
+            padding: 2em;
+            border-radius: 0.2em;
+            @include gridMaker(0.2fr 1fr,'',0.2em);
+            border: 1px solid #e9e6e6;  
+            .dialogBox
+            {
+                border-left: 0.12px solid gray;
+                ul
+                {
+                    list-style: none;
+                    padding-left: 2em;
+                li
+                {
+                    margin-bottom: 0.6em;
+                  
+                    &:nth-child(1)
+                    {
+                        color:#2552b3;
+                        font-size: 0.9rem;
+                        font-weight: bold;
+                        letter-spacing: 0.8px;
+                        margin-bottom: 2.3%;
+                    }
+                    &:nth-child(2)
+                    {
+                        color:#696868;
+                        font-size: 0.77rem;
+                    }
+                    &:nth-child(3)
+                    {
+                        margin-top:6%;
+                        color:#1A73E8;
+                        font-size: 0.8rem;
+                        cursor: pointer;
+                    }
+                }
+                }
+
+           
+            }
+        }
+    }
+}
+
+/*Settings*/
+
+.__mainSettings
+{
+    background: #3367d6;
+    padding: 0.5%;
+    color: white;
+    .settings_header
+    {
+        display: grid;
+        grid-template-columns:0.1fr 1fr;
+        justify-content: flex-start;
+        align-items: center;
+        label
+        {
+            font-size: 1rem;
+            font-weight: 100;
+            letter-spacing: 1px;
+            margin-left: 1em;
+        }
+        .search_toolBox
+        {  
+            position: relative;
+            display: flex;
+            align-items: center;
+            width: 60%;
+            justify-content: center;
+            margin:0 auto;
+            
+            .search__icon
+            {
+                position: absolute;
+                left:1%;
+                background: transparent;
+            }
+            #search_settings
+            {
+               padding: 0.8em 0.8em 0.8em 2.3em;
+               border-radius: 0.5em;
+               border:0.12em solid transparent;
+               width: 100%;
+               color:white;
+               background: rgba(1,1,1,0.28);
+            
+               position: relative;
+               &::placeholder
+               {
+                    color:lightgray;
+               }
+               &:focus
+               {
+                   outline: 0;
+                   border:0.12 solid white;
+               }
+            }
+        }
+       
+        .Settings__options
+        {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            position: relative;
+
+            #options__toggle:checked ~ .afterClickSettings
+            {
+                transform: scale(1,1);
+            
+                .container
+                {
+                    transform: scale(1,1);
+                    transition: transform cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+                }
+            }
+
+            .afterClickSettings
+            {
+                position: absolute;
+                left: -5%;
+                padding: 0;
+                background: rgba(1,1,1,0.6);
+                color:black;
+                width: 98.75vw;
+                z-index:1000;
+                top:-1.28vh;
+                height: 100vh;
+                transform-origin: left;
+                transform: scale(0,0);
+                .container
+                {
+                    position: relative;
+                    background: white;
+                    width: 20%;
+                    height: inherit;
+                    padding: 1em;
+                    transform-origin: left;
+                    transform: scale(0,1);
+                    transition: transform cubic-bezier(0.215, 0.610, 0.355, 1) 0.5s;
+                    ul
+                    {
+                          list-style: none;
+
+                          li
+                          {
+                              margin-bottom: 2em;
+                              text-align: left;
+                              width: 100%;
+                              .close_settings
+                              {
+                                   position: absolute;
+                                   right: 8%;
+                                   top:5%;
+                                   cursor: pointer;
+                              }
+                              &:nth-child(1)
+                              {
+                                  margin-bottom: 2.5em;
+                                  font-size: 0.9rem;
+                                  padding: 1em 0 1em 0em;
+                                  border-bottom: 0.1em solid #bbbbbb;
+                              }
+
+                              &:not(:nth-child(1))
+                              {
+                                  cursor: pointer;
+                                  color:#696868;
+                                  font-size: 0.86rem;
+                                  &:hover
+                                  {
+                                      color:#3367d6;
+                                  }
+                              }
+                          }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
 /*About Dev*/
 
 .__aboutDev
 {
     padding: 3%;
+    background: url('~images/jupiter.jpg') no-repeat;
+    background-size: cover;
+    height: 100vh;
+    background-attachment: fixed;
     .container
     {
         @include gridMaker(repeat(auto-fit,minmax(300px,1fr)),'',1em);
-         
+        
         .profile
         {
               width: 100%;
+              background: white;
+              border-radius: 0.3em;
               @include AlignCenter(column);
              box-shadow: 0 10px 20px -8px grey;
              box-sizing: border-box;

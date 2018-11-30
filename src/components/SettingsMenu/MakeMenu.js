@@ -39,10 +39,10 @@ export default class SettingsMenu extends Component {
         <ul>
           <li>History</li>
           <li><Link to='/Downloads'>Downloads</Link></li>
-          <li>Bookmarks</li>
+          <li id="bookmarks">Bookmarks</li>
         </ul>
         <ul>
-          <li>Settings</li>
+          <li><Link to='/Settings'>Settings</Link></li>
           <li>Help</li>
           <li><Link to="/About">About Developers</Link></li>
           <li>exit</li>
