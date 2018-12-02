@@ -422,11 +422,22 @@
             width: 100%;
             padding: 2em;
             border-radius: 0.2em;
-            @include gridMaker(0.2fr 1fr,'',0.2em);
+            @include gridMaker(minmax(100px,0.2fr) 1fr,'',0.2em);
             border: 1px solid #e9e6e6;  
+
+            .fileTypeIcon
+            {
+                @include AlignCenter(column);
+
+                img
+                {
+                    @include ImageResponsive(60%);
+                }
+            }
             .dialogBox
             {
                 border-left: 0.12px solid gray;
+                width: 100%;
                 ul
                 {
                     list-style: none;

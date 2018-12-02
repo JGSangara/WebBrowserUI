@@ -48,10 +48,10 @@ class App extends Component
                         <BrowserContainer CurrentPage="/" CurrentModeRoute="/" mode={this.state.privateMode ? "private" : "normal"} BackgroundColor={this.state.privateMode ? "rgb(50, 54, 57)" : "white"}/>
                     <StartWindow/></div>} />
 
-                    <Route exact path="/Downloads" render={()=><div><BrowserContainer CurrentPage="/#/Downloads" CurrentModeRoute="/Downloads" mode={this.state.privateMode ? "private" : "normal"} BackgroundColor={this.state.privateMode ? "rgb(50, 54, 57)" : "white"}/>
+                    <Route exact path="/Downloads" render={()=><div><BrowserContainer CurrentPage="/Downloads" CurrentModeRoute="/Downloads" mode={this.state.privateMode ? "private" : "normal"} BackgroundColor={this.state.privateMode ? "rgb(50, 54, 57)" : "white"}/>
                     <DownloadsSection/></div>} />
 
-                    <Route exact path="/Settings" render={()=><div><BrowserContainer CurrentPage="/#/Settings" CurrentModeRoute="/Settings" mode={this.state.privateMode ? "private" : "normal"} BackgroundColor={this.state.privateMode ? "rgb(50, 54, 57)" : "white"}/>
+                    <Route exact path="/Settings" render={()=><div><BrowserContainer CurrentPage="/Settings" CurrentModeRoute="/Settings" mode={this.state.privateMode ? "private" : "normal"} BackgroundColor={this.state.privateMode ? "rgb(50, 54, 57)" : "white"}/>
                     <BrowserSettings/></div>} />
 
                     <Route exact path="/private" render={()=><div onLoad={this.handleMode}>
